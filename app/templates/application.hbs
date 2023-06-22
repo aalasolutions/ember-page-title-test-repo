@@ -1,7 +1,25 @@
-{{page-title "PageTest"}}
+{{page-title "Home"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<LinkTo @route="index">Home Page</LinkTo> - 
+<LinkTo @route="about">About - uses page title</LinkTo> - 
+<LinkTo @route="contact">Contact - uses afterModel and JS</LinkTo>
 
+<p>
+    Note: <br><br>
+    1. in application.hbs, first line page-title is commented<br>
+    2. So application is using index.html page title when you oepn this Page<br>
+
+</p>
+<p>
+    Okay to test this. Perform the following steps<br><br>
+    1. Go to Contact Page , title should change to Contact - This uses afterModel <br>
+    2. Go back to home page, title will not change as page-title helper is commented<br>
+    3. Now go to About Us page, it changes the title using the page-title helper<br>
+    4. Go to Home page, title will be fully removed<br>
+    5. Go to Contact, you will see Contact title for a jiffy and it will be removed again
+
+    <br><br>
+    Now, uncomment the first line on this page<br>
+    Going from page to page, contact us page will show title for a second and will change to home
+</p>
 {{outlet}}
